@@ -1,0 +1,127 @@
+{
+  "notice": "公众号┃woyuxiuxing· 软件完全免费",
+  "wallpaper": "https://api.btstu.cn/sjbz/api.php",
+  "logo": "https://gitee.com/yimi321/ymys/raw/master/lib/yimi.gif",
+  "sites": [
+    {
+      "key": "腾讯视频",
+      "name": "壹米┃4K",
+      "type": 3,
+      "api": "http://125.208.22.184:6698/uploads/tvbox/jsguan/drpy_dzlive/drpy_libs/drpy2.min.js",
+      "ext": "./lib/txtv.js"
+    },
+    {
+      "key": "芒果视频",
+      "name": "果果┃4K",
+      "type": 3,
+      "api": "http://125.208.22.184:6698/uploads/tvbox/jsguan/drpy_dzlive/drpy_libs/drpy2.min.js",
+      "ext": "./lib/mgtv.js"
+    },
+    {
+      "key": "hipy_js_优酷[官]",
+      "name": "优酷┃2K",
+      "type": 3,
+      "api": "http://125.208.22.184:6698/uploads/tvbox/jsguan/drpy_dzlive/drpy_libs/drpy2.min.js",
+      "ext": "./lib/youku.js"
+    },
+    {
+      "key": "哔哩哔哩",
+      "name": "哔哔┃4K",
+      "type": 3,
+      "api": "http://125.208.22.184:6698/uploads/tvbox/jsguan/drpy_dzlive/drpy_libs/drpy2.min.js",
+      "ext": "./lib/bltv.js"
+    },
+    {
+      "key": "爱奇艺",
+      "name": "奇艺┃2K",
+      "type": 3,
+      "api": "http://125.208.22.184:6698/uploads/tvbox/jsguan/drpy_dzlive/drpy_libs/drpy2.min.js",
+      "ext": "./lib/qytv.js"
+    }
+  ],
+  "rules": [
+    {
+      "name": "头条",
+      "hosts": [
+        "toutiaovod.com"
+      ],
+      "regex": [
+        "video/tos/cn"
+      ]
+    },
+    {
+      "name": "火山",
+      "hosts": [
+        "huoshan.com"
+      ],
+      "regex": [
+        "item_id="
+      ]
+    },
+    {
+      "name": "抖音",
+      "hosts": [
+        "douyin.com"
+      ],
+      "regex": [
+        "is_play_url="
+      ]
+    },
+    {
+      "name": "饭团点击",
+      "hosts": [
+        "dadagui",
+        "freeok",
+        "dadagui"
+      ],
+      "script": [
+        "document.querySelector(\"#playleft iframe\").contentWindow.document.querySelector(\"#start\").click();"
+      ]
+    },
+    {
+      "name": "毛驴点击",
+      "hosts": [
+        "www.maolvys.com"
+      ],
+      "script": [
+        "document.getElementsByClassName('swal-button swal-button--confirm')[0].click()"
+      ]
+    },
+    {
+      "name": "ofiii",
+      "hosts": [
+        "www.ofiii.com"
+      ],
+      "script": [
+        "const play=document.getElementsByClassName('play_icon')[0],event=new MouseEvent('click',{bubbles:!0,cancelable:!0,view:window,screenX:100,screenY:100,clientX:50,clientY:50,button:0,shiftKey:!1,ctrlKey:!1,altKey:!1,metaKey:!1,modifierState:0});play.dispatchEvent(event);"
+      ]
+    }
+  ],
+  "parses": [
+    {
+            "name": "壹米解析1",
+            "type": 0,
+            "url": "https://jx.xmflv.com/?url=",
+            "ext": {
+                "header": {
+                    "user-agent": "Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/110.0.0.0Safari/537.36Edg/110.0.1587.57"
+                }
+            }
+    },
+    {
+            "name": "壹米解析2",
+            "type": 0,
+            "url": "https://www.playm3u8.cn/jiexi.php?url=",
+            "ext": {
+                "header": {
+                    "user-agent": "Mozilla/5.0(Linux;Android13;V2049ABuild/TP1A.220624.014;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/116.0.0.0MobileSafari/537.36"
+                }
+            }
+    },
+    {
+      "name": "解析聚合",
+      "type": 3,
+      "url": "Demo"
+    }
+  ]
+}
